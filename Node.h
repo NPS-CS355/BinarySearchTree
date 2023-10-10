@@ -49,17 +49,17 @@ private:
 
 
 	}
-
+	// added "<< " " " to cout line for clarity when printing statements.
 	void inorder(Node<type>* ptr)
 	{
 		if(ptr != nullptr)
 		{
 			inorder(ptr->left);
-			cout << ptr->data;
+			cout << ptr->data << " ";
 			inorder(ptr->right);
 		}
 	}
-
+	// doesnt print data in last node
 	void preorder(Node<type>* ptr)
 	{
 		if (ptr != nullptr)
