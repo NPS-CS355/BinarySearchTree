@@ -5,7 +5,7 @@ using namespace std::chrono;
 
 int main()
 {
-	binarySearchTree <int>tree;
+	binarySearchTree<int> tree;
 	const int MAX = 1000;
 
 	//(best) Omega
