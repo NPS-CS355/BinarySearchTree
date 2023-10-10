@@ -114,7 +114,7 @@ public:
 
 		if(root == nullptr)
 			root = newNode;
-		else if(newNode->data > root)
+		else if(newNode->data > root->data)
 		{
 			insertRecursively(root->right, root, newNode);
 
