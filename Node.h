@@ -86,17 +86,27 @@ private:
 			return false;
 		else if(ptr->data == item)
 			return true;
-		else if (item > ptr->info)
+		else if (item > ptr->data)
 		{
 			return searchRecursively(ptr->right, item);
 		}
-		else if (item < ptr->info)
+		else if (item < ptr->data)
 		{
 			return searchRecursively(ptr->left, item);
 		}
 	}
 
-
+	void destroy(Node<type>*& ptr)
+	{
+		if (ptr != nullptr)
+		{
+			destroy(ptr->left);
+			destroy(ptr->right);
+			delete ptr;
+			ptr = nullptr;
+		}
+	}
+			
 
 public:
 	binarySearchTree()
@@ -141,15 +151,9 @@ public:
 		postorder(root);
 	}
 
-	void deleteTree(Node<type>*& ptr)
+	void deleteTree()
 	{
-		if(ptr != nullptr)
-		{
-			destroy(ptr->left);
-			destory(ptr->right);
-			delete ptr;
-			ptr = nullptr;
-		}
+		destroy(root);
 	}
 
 	bool search(type& item)
