@@ -7,7 +7,7 @@ using namespace std::chrono;
 int main()
 {
 	binarySearchTree<int> tree;
-	const int MAX = 350000;
+	const int MAX = 25000;
 	char user = ' ';
 	int item = 1;
 	int randomNum = 0;
@@ -82,12 +82,12 @@ int main()
 		//time stop
 		stop = high_resolution_clock::now();
 		//time measure
-		duration = duration_cast<milliseconds>(stop - start);
+		duration = duration_cast<seconds>(stop - start);
 
 		cout << "The postorder function took " << duration.count() << " seconds to complete" << endl;
 		user = ' ';
 	}
-/*	
+/*
 	//time start
 	start = high_resolution_clock::now();
 
@@ -96,7 +96,7 @@ int main()
 	//time stop
 	stop = high_resolution_clock::now();
 	//time measure
-	duration = duration_cast<milliseconds>(stop - start);
+	duration = duration_cast<seconds>(stop - start);
 
 	cout << "The search function took " << duration.count() << " milliseconds to find 1" << endl;
 */
@@ -127,7 +127,7 @@ int main()
 	//stop time
 	stop = high_resolution_clock::now();
 	//time measure
-	duration = duration_cast<milliseconds>(stop - start);
+	duration = duration_cast<seconds>(stop - start);
 
 	cout << "The insert function (avg case) took " << duration.count() << "seconds to complete" << endl;
 
@@ -187,7 +187,7 @@ int main()
 		cout << "The postorder function took " << duration.count() << " seconds to complete" << endl;
 		user = ' ';
 	}
-	//worst case, item isnt in list
+/*	//worst case, item isnt in list
 	item = -1;
 	//time start
 	start = high_resolution_clock::now();
@@ -200,6 +200,7 @@ int main()
 	duration = duration_cast<seconds>(stop - start);
 
 	cout << "The search function took " << duration.count() << " seconds to find 1" << endl;
-
+*/
 	return 0;
+
 }
