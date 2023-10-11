@@ -7,7 +7,7 @@ using namespace std::chrono;
 int main()
 {
 	binarySearchTree<int> tree;
-	const int MAX = 25000;
+	const int MAX = 5000;
 	char user = ' ';
 	int item = 1;
 	int randomNum = 0;
@@ -28,7 +28,7 @@ int main()
 	//time measure
 	auto duration = duration_cast<milliseconds>(stop - start);
 
-	cout << "The insert function took " << duration.count()<< " seconds to complete" << endl;
+	cout << "The insert function took " << duration.count()<< " milliseconds to complete" << endl;
 		
 	cout << "Test Inorder function? y/n" << endl;
 	cin >> user;
@@ -45,7 +45,7 @@ int main()
 		//time measure
 		duration = duration_cast<milliseconds>(stop - start);
 	
-		cout << "The inorder function took " << duration.count()<< " seconds to complete" << endl;
+		cout << "The inorder function took " << duration.count()<< " miliseconds to complete" << endl;
 		user = ' ';
 	}
 
@@ -64,7 +64,7 @@ int main()
 		//time measure
 		duration = duration_cast<milliseconds>(stop - start);
 
-		cout << "The preorder function took " << duration.count() << " seconds to complete" << endl;
+		cout << "The preorder function took " << duration.count() << " milliseconds to complete" << endl;
 		user = ' ';
 	}
 
@@ -83,10 +83,10 @@ int main()
 		//time measure
 		duration = duration_cast<milliseconds>(stop - start);
 
-		cout << "The postorder function took " << duration.count() << " seconds to complete" << endl;
+		cout << "The postorder function took " << duration.count() << " milliseconds to complete" << endl;
 		user = ' ';
 	}
-	
+/*	
 	//time start
 	start = high_resolution_clock::now();
 
@@ -97,8 +97,8 @@ int main()
 	//time measure
 	duration = duration_cast<milliseconds>(stop - start);
 
-	cout << "The search function took " << duration.count() << " seconds to find 1" << endl;
-
+	cout << "The search function took " << duration.count() << " milliseconds to find 1" << endl;
+*/
 	//time start
 	start = high_resolution_clock::now();
 
@@ -109,7 +109,7 @@ int main()
 	//time measure
 	duration = duration_cast<milliseconds>(stop - start);
 
-	cout << "The destroyTree function took " << duration.count() << " seconds to complete" << endl;
+	cout << "The destroyTree function took " << duration.count() << " milliseconds to complete" << endl;
 
 	//(average) THETA
 	
@@ -128,7 +128,7 @@ int main()
 	//time measure
 	duration = duration_cast<milliseconds>(stop - start);
 
-	cout << "The insert function (avg case) took " << duration.count() << "seconds to complete" << endl;
+	cout << "The insert function (avg case) took " << duration.count() << "milliseconds to complete" << endl;
 
 	cout << "Test Inorder function? y/n" << endl;
 	cin >> user;
@@ -145,7 +145,7 @@ int main()
 		//time measure
 		duration = duration_cast<milliseconds>(stop - start);
 	
-		cout << "The inorder function took " << duration.count()<< " seconds to complete" << endl;
+		cout << "The inorder function took " << duration.count()<< " milliseconds to complete" << endl;
 		user = ' ';
 	}
 	
@@ -164,7 +164,7 @@ int main()
 		//time measure
 		duration = duration_cast<milliseconds>(stop - start);
 
-		cout << "The preorder function took " << duration.count() << " seconds to complete" << endl;
+		cout << "The preorder function took " << duration.count() << " milliseconds to complete" << endl;
 		user = ' ';
 	}
 	
@@ -183,7 +183,7 @@ int main()
 		//time measure
 		duration = duration_cast<milliseconds>(stop - start);
 
-		cout << "The postorder function took " << duration.count() << " seconds to complete" << endl;
+		cout << "The postorder function took " << duration.count() << " milliseconds to complete" << endl;
 		user = ' ';
 	}
 	
@@ -197,7 +197,7 @@ int main()
 	//time measure
 	duration = duration_cast<milliseconds>(stop - start);
 
-	cout << "The search function took " << duration.count() << " seconds to find 1" << endl;
-	
+	cout << "The search function took " << duration.count() << " milliseconds to find 1" << endl;
+
 	return 0;
 }
