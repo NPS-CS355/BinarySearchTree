@@ -80,7 +80,7 @@ private:
 		}
 	}
 
-	bool searchRecursively(Node<type>*& ptr, type item)
+	bool searchRecursively(Node<type>*& ptr,const type& item)
 	{
 		if(ptr == nullptr)
 			return false;
@@ -156,7 +156,7 @@ public:
 		destroy(root);
 	}
 
-	bool search(type& item)
+	bool search(const type& item)
 	{
 		return searchRecursively(root, item);
 	}
