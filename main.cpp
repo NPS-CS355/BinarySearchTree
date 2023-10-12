@@ -230,7 +230,7 @@ int main()
 		//time measure
 		duration = duration_cast<milliseconds>(stop - start);
 
-		cout << "The search function took " << duration.count() << " milliseconds to find " << item << endl;
+		cout << "The search function took " << duration.count() << " milliseconds but couldn't find " << item << endl;
 	}
 
 
