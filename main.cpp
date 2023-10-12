@@ -9,13 +9,17 @@ int main()
 	binarySearchTree<int> tree;
 	const int MAX = 25000;
 	char user = ' ';
-	int item = 1;
+	char cont = ' ';
+	int item = 24000;
 	int randomNum = 0;
 	
 	//(best) Omega
-	
+	cout << "Experimenting on the Best Case (Omega)! Press Enter to continue" << endl << endl;
+	cin.get(cont);
 	//time start
+	cout << "Loading " << MAX << " ordered input into the Binary Search Tree. Please wait" << endl; 
 	auto start = high_resolution_clock::now();
+	
 
 	//insert function
 	for(int i=0; i < MAX ; i++)
@@ -26,9 +30,9 @@ int main()
 	//time stop
 	auto stop = high_resolution_clock::now();
 	//time measure
-	auto duration = duration_cast<seconds>(stop - start);
+	auto duration = duration_cast<milliseconds>(stop - start);
 
-	cout << "The insert function took " << duration.count()<< " seconds to complete" << endl;
+	cout << "The insert function took " << duration.count()<< " milliseconds to complete" << endl;
 		
 	cout << "Test Inorder function? y/n" << endl;
 	cin >> user;
@@ -43,10 +47,10 @@ int main()
 		//stop time
 		stop = high_resolution_clock::now();
 		//time measure
-		duration = duration_cast<seconds>(stop - start);
+		duration = duration_cast<milliseconds>(stop - start);
 
 	
-		cout << "The inorder function took " << duration.count()<< " seconds to complete" << endl;
+		cout << "The inorder function took " << duration.count()<< " milliseconds to complete" << endl;
 		user = ' ';
 	}
 
@@ -63,9 +67,9 @@ int main()
 		//time stop
 		stop = high_resolution_clock::now();
 		//time measure
-		duration = duration_cast<seconds>(stop - start);
+		duration = duration_cast<milliseconds>(stop - start);
 
-		cout << "The preorder function took " << duration.count() << " seconds to complete" << endl;
+		cout << "The preorder function took " << duration.count() << " milliseconds to complete" << endl;
 		user = ' ';
 	}
 
@@ -82,24 +86,35 @@ int main()
 		//time stop
 		stop = high_resolution_clock::now();
 		//time measure
-		duration = duration_cast<seconds>(stop - start);
+		duration = duration_cast<milliseconds>(stop - start);
 
-		cout << "The postorder function took " << duration.count() << " seconds to complete" << endl;
+		cout << "The postorder function took " << duration.count() << " milliseconds to complete" << endl;
 		user = ' ';
 	}
-/*
+
 	//time start
 	start = high_resolution_clock::now();
 
-	tree.search(item);
+	if(tree.search(item))
+	{
 
-	//time stop
-	stop = high_resolution_clock::now();
-	//time measure
-	duration = duration_cast<seconds>(stop - start);
+		//time stop
+		stop = high_resolution_clock::now();
+		//time measure
+		duration = duration_cast<milliseconds>(stop - start);
 
-	cout << "The search function took " << duration.count() << " milliseconds to find 1" << endl;
-*/
+		cout << "The search function took " << duration.count() << " milliseconds to find " << item << endl;
+	}
+       	else 
+	{
+
+		stop = high_resolution_clock::now();
+		//time measure
+		duration = duration_cast<milliseconds>(stop - start);
+
+		cout << "The search function took " << duration.count() << " milliseconds but couldn't find " << item << endl;
+	}
+
 	//time start
 	start = high_resolution_clock::now();
 
@@ -108,15 +123,20 @@ int main()
 	//stop time
 	stop = high_resolution_clock::now();
 	//time measure
-	duration = duration_cast<seconds>(stop - start);
+	duration = duration_cast<milliseconds>(stop - start);
 
-	cout << "The destroyTree function took " << duration.count() << " seconds to complete" << endl;
+	cout << "The destroyTree function took " << duration.count() << " milliseconds to complete" << endl;
 
 	//(average) THETA
 	
 	binarySearchTree<int> AvgTree;
 
 	//start time
+	
+	cout << "Experimenting on the Best Case (Theta)! Press Enter to continue" << endl << endl;
+	cin.get(cont);
+	//time start
+	cout << "Loading " << MAX << " Random inputs into the Binary Search Tree. Please wait" << endl; 
 	start = high_resolution_clock::now();
 	//insert function
 	for(int count = 0; count < MAX; count++)
@@ -127,9 +147,9 @@ int main()
 	//stop time
 	stop = high_resolution_clock::now();
 	//time measure
-	duration = duration_cast<seconds>(stop - start);
+	duration = duration_cast<milliseconds>(stop - start);
 
-	cout << "The insert function (avg case) took " << duration.count() << "seconds to complete" << endl;
+	cout << "The insert function (avg case) took " << duration.count() << " milliseconds to complete" << endl;
 
 	cout << "Test Inorder function? y/n" << endl;
 	cin >> user;
@@ -144,9 +164,9 @@ int main()
 		//stop time
 		stop = high_resolution_clock::now();
 		//time measure
-		duration = duration_cast<seconds>(stop - start);
+		duration = duration_cast<milliseconds>(stop - start);
 	
-		cout << "The inorder function took " << duration.count()<< " seconds to complete" << endl;
+		cout << "The inorder function took " << duration.count()<< " milliseconds to complete" << endl;
 		user = ' ';
 	}
 	
@@ -163,9 +183,9 @@ int main()
 		//time stop
 		stop = high_resolution_clock::now();
 		//time measure
-		duration = duration_cast<seconds>(stop - start);
+		duration = duration_cast<milliseconds>(stop - start);
 
-		cout << "The preorder function took " << duration.count() << " seconds to complete" << endl;
+		cout << "The preorder function took " << duration.count() << " milliseconds to complete" << endl;
 		user = ' ';
 	}
 	
@@ -182,25 +202,38 @@ int main()
 		//time stop
 		stop = high_resolution_clock::now();
 		//time measure
-		duration = duration_cast<seconds>(stop - start);
+		duration = duration_cast<milliseconds>(stop - start);
 
-		cout << "The postorder function took " << duration.count() << " seconds to complete" << endl;
+		cout << "The postorder function took " << duration.count() << " milliseconds to complete" << endl;
 		user = ' ';
 	}
-/*	//worst case, item isnt in list
-	item = -1;
+	//worst case, item isnt in list
+	item = 26000;
 	//time start
 	start = high_resolution_clock::now();
 
-	tree.search(item);
+	if(AvgTree.search(item))
+	{
+		
+		//time stop
+		stop = high_resolution_clock::now();
+		//time measure
+		duration = duration_cast<milliseconds>(stop - start);
 
-	//time stop
-	stop = high_resolution_clock::now();
-	//time measure
-	duration = duration_cast<seconds>(stop - start);
+		cout << "The search function took " << duration.count() << " milliseconds to find " << item << endl;
+	}
+	else 
+	{
 
-	cout << "The search function took " << duration.count() << " seconds to find 1" << endl;
-*/
+		//time stop
+		stop = high_resolution_clock::now();
+		//time measure
+		duration = duration_cast<milliseconds>(stop - start);
+
+		cout << "The search function took " << duration.count() << " milliseconds to find " << item << endl;
+	}
+
+
 	return 0;
 
 }
